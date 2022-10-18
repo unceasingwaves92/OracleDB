@@ -10,11 +10,11 @@ import java.util.Properties;
 
 public class DBConnection {
 
-    public static Connection getOracleDB(String path) throws FileNotFoundException, IOException{
+    public static Connection getOracleDB() throws FileNotFoundException, IOException{
         Connection connection = null;
         Properties prop = new Properties();
         try {
-            FileInputStream fis = new FileInputStream(path);
+            FileInputStream fis = new FileInputStream("C:\\Users\\Dell\\IdeaProjects\\OracleDB\\src\\resources\\db.properties");
             prop.load(fis);
 
             connection = DriverManager.getConnection(prop.getProperty("DB_URL"),
